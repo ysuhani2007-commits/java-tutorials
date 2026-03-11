@@ -1,0 +1,57 @@
+public class OOPSBannerApp {
+
+    public static void main(String[] args) {
+
+        String[] banner = new String[7];
+
+        for (int i = 0; i < 7; i++) {
+            banner[i] = getOPattern(i) +
+                        getOPattern(i) +
+                        getPPattern(i) +
+                        getSPattern(i);
+        }
+
+        for (String line : banner) {
+            System.out.println(line);
+        }
+    }
+
+    static String getOPattern(int row) {
+        switch (row) {
+            case 0:
+            case 6: return " *****   ";
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5: return "*     *  ";
+            default: return "";
+        }
+    }
+
+    static String getPPattern(int row) {
+        switch (row) {
+            case 0:
+            case 3: return "******   ";
+            case 1:
+            case 2: return "*     *  ";
+            case 4:
+            case 5:
+            case 6: return "*        ";
+            default: return "";
+        }
+    }
+
+    static String getSPattern(int row) {
+        switch (row) {
+            case 0:
+            case 6: return " *****   ";
+            case 1:
+            case 2: return "*        ";
+            case 3: return " *****   ";
+            case 4:
+            case 5: return "      *  ";
+            default: return "";
+        }
+    }
+}
